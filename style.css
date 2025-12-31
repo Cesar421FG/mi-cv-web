@@ -1,0 +1,534 @@
+    /* ===== RESET Y CONFIGURACIÓN PARA UNA HOJA ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.4;
+      font-size: 11pt;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* ===== CONTENEDOR PRINCIPAL - TAMAÑO CARTA ===== */
+    .cv-container {
+      width: 21cm;
+      /* Ancho carta */
+      min-height: 29.7cm;
+      /* Alto carta */
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ===== CABECERA ===== */
+    .header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 22pt;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .header-info .title {
+      font-size: 12pt;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 9pt;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item i {
+      color: #4CAF50;
+    }
+
+    /* ===== CONTENIDO PRINCIPAL - 2 COLUMNAS ===== */
+    .main-content {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      min-height: calc(29.7cm - 140px);
+    }
+
+    /* ===== COLUMNA IZQUIERDA ===== */
+    .left-column {
+      background: #f8f9fa;
+      padding: 20px;
+      border-right: 1px solid #eee;
+    }
+
+    /* ===== COLUMNA DERECHA ===== */
+    .right-column {
+      padding: 20px;
+    }
+
+    /* ===== SECCIONES COMPACTAS ===== */
+    .section {
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      color: #1e3c72;
+      font-size: 12pt;
+      font-weight: 600;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #1e3c72;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title i {
+      font-size: 10pt;
+    }
+
+    /* ===== ACERCA DE ===== */
+    .about-text {
+      font-size: 9pt;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    /* ===== IDIOMAS COMPACTOS ===== */
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .language-item {
+      background: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 9pt;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .language-name {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .language-level {
+      color: #1e3c72;
+      font-size: 8pt;
+      font-weight: 500;
+    }
+
+    /* ===== REDES SOCIALES COMPACTAS ===== */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .social-item {
+      width: 32px;
+      height: 32px;
+      background: #1e3c72;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10pt;
+      transition: all 0.3s ease;
+    }
+
+    .social-item:hover {
+      background: #4CAF50;
+      transform: scale(1.1);
+    }
+
+    /* ===== PASATIEMPOS COMPACTOS ===== */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .hobby-item {
+      text-align: center;
+      padding: 8px 5px;
+      background: white;
+      border-radius: 4px;
+      font-size: 8pt;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .hobby-item i {
+      color: #1e3c72;
+      margin-bottom: 3px;
+      display: block;
+      font-size: 10pt;
+    }
+
+    /* ===== TIMELINE COMPACTO ===== */
+    .timeline-item {
+      margin-bottom: 12px;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #1e3c72;
+      font-size: 8pt;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: #1e3c72;
+      font-size: 10pt;
+      margin-bottom: 2px;
+    }
+
+    .timeline-subtitle {
+      color: #666;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+
+    /* ===== HABILIDADES COMPACTAS ===== */
+    .skills-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .skill-category {
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .skill-category h4 {
+      color: #1e3c72;
+      font-size: 10pt;
+      margin-bottom: 8px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .skill-item {
+      margin-bottom: 6px;
+    }
+
+    .skill-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-name {
+      font-size: 9pt;
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    .skill-bar {
+      height: 4px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(to right, #1e3c72, #4CAF50);
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    /* ===== COMPETENCIAS COMPACTAS ===== */
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .competency-item {
+      text-align: center;
+      padding: 10px 5px;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .competency-name {
+      font-size: 9pt;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .competency-percent {
+      color: #1e3c72;
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    /* ===== REFERENCIAS COMPACTAS ===== */
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .reference-item {
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 9pt;
+    }
+
+    .reference-company {
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 3px;
+    }
+
+    .reference-name {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .reference-phone {
+      color: #666;
+      font-size: 8pt;
+    }
+
+    /* ===== BOTÓN DE IMPRESIÓN ===== */
+    .print-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1e3c72;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      box-shadow: 0 3px 10px rgba(30, 60, 114, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .print-button:hover {
+      background: #4CAF50;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+    @media screen and (max-width: 21cm) {
+      body {
+        padding: 0;
+        background: white;
+      }
+
+      .cv-container {
+        width: 100%;
+        box-shadow: none;
+        min-height: auto;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      .left-column {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+      }
+
+      .profile-img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .header-info h1 {
+        font-size: 18pt;
+      }
+    }
+
+    /* ===== ESTILOS DE IMPRESIÓN ===== */
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+      }
+
+      .cv-container {
+        width: 100% !important;
+        min-height: auto !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .header {
+        padding: 15px 20px !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      .profile-img {
+        width: 80px !important;
+        height: 80px !important;
+        border-width: 2px !important;
+      }
+
+      .header-info h1 {
+        font-size: 18pt !important;
+      }
+
+      .header-info .title {
+        font-size: 11pt !important;
+      }
+
+      .main-content {
+        display: grid !important;
+        grid-template-columns: 35% 65% !important;
+        min-height: auto !important;
+      }
+
+      .left-column,
+      .right-column {
+        padding: 15px !important;
+      }
+
+      .section {
+        margin-bottom: 15px !important;
+      }
+
+      .section-title {
+        font-size: 11pt !important;
+        margin-bottom: 8px !important;
+      }
+
+      .about-text,
+      .timeline-subtitle,
+      .reference-phone {
+        font-size: 8.5pt !important;
+      }
+
+      .contact-info,
+      .timeline-title {
+        font-size: 8.5pt !important;
+      }
+
+      .print-button,
+      .social-item:hover,
+      .hobby-item:hover {
+        display: none !important;
+      }
+
+      /* Asegurar que todo entre en una hoja */
+      .cv-container {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      /* Optimizar espacios */
+      .languages-grid,
+      .hobbies-grid,
+      .competencies-grid {
+        gap: 5px !important;
+      }
+
+      .language-item,
+      .hobby-item {
+        padding: 5px 3px !important;
+      }
+
+      /* Ajustar márgenes para máximo aprovechamiento */
+      @page {
+        margin: 0.5cm;
+      }
+
+      /* Quitar efectos que no se imprimen */
+      .skill-progress,
+      .language-item,
+      .hobby-item {
+        box-shadow: none !important;
+        border: 1px solid #eee !important;
+      }
+
+      /* Asegurar buen contraste en impresión */
+      .section-title {
+        border-bottom-color: #000 !important;
+      }
+
+      .timeline-item::before {
+        color: #000 !important;
+      }
+
+      .skill-progress {
+        background: #333 !important;
+      }
+    }
+ 
